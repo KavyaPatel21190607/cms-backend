@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // CORS configuration
 const allowedOrigins = process.env.CLIENT_URL;
+const allowedOrigins = process.env.CMS_URL;
 
 
 const corsOptions = {
@@ -116,4 +117,5 @@ process.on('unhandledRejection', (err) => {
   // Close server & exit process
   process.exit(1);
 });
+
 
