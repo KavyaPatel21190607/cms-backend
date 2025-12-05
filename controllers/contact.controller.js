@@ -102,7 +102,9 @@ exports.getContactMessages = async (req, res) => {
 
     res.json({
       success: true,
-      data: messages
+      data: {
+        messages: messages
+      }
     });
   } catch (error) {
     res.status(500).json({
