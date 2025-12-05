@@ -30,15 +30,8 @@ app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // CORS configuration
-const allowedOrigins = process.env.CLIENT_URL 
-  ? process.env.CLIENT_URL.split(',').map(url => url.trim())
-  : [
-      'http://localhost:5173', 
-      'http://localhost:5174', 
-      'http://localhost:3000',
-      'https://portfolio-demo-six-pi.vercel.app',
-      'https://cms-frontend-lake-ten.vercel.app'
-    ];
+const allowedOrigins = process.env.CLIENT_URL;
+
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -123,3 +116,4 @@ process.on('unhandledRejection', (err) => {
   // Close server & exit process
   process.exit(1);
 });
+
